@@ -1,9 +1,15 @@
+
 <template>
-  <div class="event-card">
-    <!-- Display Event Data -->
-    <span>@ {{ event.time }} on {{ event.date }}</span>
-    <h4>{{ event.title }}</h4>
-  </div>
+  <router-link v-bind:to="{ name: 'EventDetails', params: { id: event.id }}">
+    <div class="event-card">
+      <!-- Display Event Data -->
+      <span>@ {{ event.time }} on {{ event.date }}</span>
+      <h4>{{ event.title }}</h4>
+      <p><strong>Location:</strong> {{ event.location }}</p>
+      <p><strong>Organizer: </strong>{{ event.organizer }}</p>
+      <p><strong>Description: </strong>{{ event.description }}</p>
+    </div>
+  </router-link>
 </template>
 
 <script>
